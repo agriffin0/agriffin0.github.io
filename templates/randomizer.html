@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Randomizer
+{% endblock %}
+
+{% block main %}
+
+    <h3>What should I listen to?</h3>
+    <form action="/random" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="artist">
+                <option disabled selected>Artist</option>
+                {% for artist_choice in artist_choices %}
+                <option value="{{ artist_choice["artist"] }}">{{ artist_choice["artist"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="genre">
+                <option disabled selected>Genre</option>
+                {% for genre_choice in genre_choices %}
+                <option value="{{ genre_choice["genre"] }}">{{ genre_choice["genre"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="year">
+                <option disabled selected>Decade</option>
+                {% for year_choice in year_choices %}
+                <option value="{{ year_choice["decade"] }}">{{ year_choice["decade"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary mb-5" type="submit">Submit</button>
+    </form>
+{% endblock %}

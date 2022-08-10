@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Vinyl
+{% endblock %}
+
+{% block main %}
+
+    <!-- Adapted from CS50 -->
+    <!-- https://memegen.link/ -->
+    <img alt="{{ top }}" class="border img-fluid" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=static/vinyl.jpg" title="{{ top }}">
+
+{% endblock %}
